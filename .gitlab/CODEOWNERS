@@ -1,0 +1,5 @@
+* @jakelogemann @christinegraham @sarahbx
+.gitlab-ci.yml  @jakelogemann @christinegraham
+
+# Protects updates of personally configured packages.
+customized/vscode/jakelogemann.nix @jakelogemann
