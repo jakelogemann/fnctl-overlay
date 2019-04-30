@@ -1,0 +1,19 @@
+snippet _newModule "Boilerplate Nix Module" b
+\{ config, lib, pkgs, ... \}:
+let 
+	cfg = config.SUBPATH;
+
+in \{
+
+	options = \{
+		enable = lib.mkEnableOption "Module enabled";
+	\};
+
+	config = lib.mkIf cfg.enable \{
+		$0
+	\};
+
+
+\}
+endsnippet
+

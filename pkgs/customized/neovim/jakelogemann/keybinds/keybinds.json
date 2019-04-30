@@ -1,0 +1,55 @@
+{
+  "command":[],
+
+  "insert":[
+    { "key":"<A-h>",        "action":"<C-\\><C-n><C-w>h" },
+    { "key":"<A-j>",        "action":"<C-\\><C-n><C-w>j" },
+    { "key":"<A-k>",        "action":"<C-\\><C-n><C-w>k" },
+    { "key":"<A-l>",        "action":"<C-\\><C-n><C-w>l" },
+    { "key":"<Left>",       "action":"<Nop>" },
+    { "key":"<Down>",       "action":"<Nop>" },
+    { "key":"<Up>",         "action":"<Nop>" },
+    { "key":"<Right>",      "action":"<Nop>" }
+  ],
+
+  "normal":[
+    { "key":"<F1>",         "action":":FindVimHelp<cr>" },
+    { "key":"<F2>",         "action":":FindCommand<cr>" },
+    { "key":"<S-F2>",       "action":":tab terminal" },
+    { "key":"<M-t>",        "action":"<nop>" },
+    { "key":"<C-b>",        "action":":FindBuffer<cr>" },
+    { "key":"<C-e>",        "action":":silent! Explore<cr>" },
+    { "key":"<C-p>",        "action":":FindFiles<cr>" },
+    { "key":"<C-c><C-c>",   "action":":Startify<cr>" },
+    { "key":"<C-h>",        "action":"<C-w>h" },
+    { "key":"<C-j>",        "action":"<C-w>j" },
+    { "key":"<C-k>",        "action":"<C-w>k" },
+    { "key":"<C-l>",        "action":"<C-w>l" },
+    { "key":"gb",           "action":":bnext<cr>" },
+    { "key":"gB",           "action":":bprevious<cr>" },
+    { "key":"gt",           "action":":tabnext<cr>" },
+    { "key":"gT",           "action":":tabprevious<cr>" },
+    { "key":"<A-h>",        "action":"<C-w>h" },
+    { "key":"<A-j>",        "action":"<C-w>j" },
+    { "key":"<A-k>",        "action":"<C-w>k" },
+    { "key":"<A-l>",        "action":"<C-w>l" }
+  ],
+
+  "terminal":[
+    { "key":"<A-h>",        "action":"<C-\\><C-n><C-w>h" },
+    { "key":"<A-j>",        "action":"<C-\\><C-n><C-w>j" },
+    { "key":"<A-k>",        "action":"<C-\\><C-n><C-w>k" },
+    { "key":"<A-l>",        "action":"<C-\\><C-n><C-w>l" },
+    { "key":"<F2>",         "action":"<C-\\><C-n>"},
+    { "key":"<Esc><Esc>",   "action":"<C-\\><C-n>"}
+  ],
+
+  "visual":[
+    { "key":"<Up>",         "action":"<Plug>SchleppUp" },
+    { "key":"<Down>",       "action":"<Plug>SchleppDown" },
+    { "key":"<Left>",       "action":"<Plug>SchleppLeft" },
+    { "key":"<Right>",      "action":"<Plug>SchleppRight" },
+    { "key":"<S-Up>",       "action":"<Plug>SchleppIndentUp" },
+    { "key":"<S-Down>",     "action":"<Plug>SchleppIndentDown" },
+    { "key":"D",            "action":"<Plug>SchleppDup" }
+  ]}

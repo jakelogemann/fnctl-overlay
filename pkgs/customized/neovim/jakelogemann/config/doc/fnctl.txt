@@ -1,0 +1,22 @@
+*fnctl.txt*	Customizations provided by FnCtl.io.
+==============================================================================
+
+Author:  Jake <jake.logemann at gmail.com>
+Version: 0.1
+
+==============================================================================
+CONTENTS						*fnctl-contents*
+
+Introduction   ............................ |fnctl-introduction|
+Usage	       ............................ |fnctl-usage|
+Install	       ............................ |fnctl-install|
+FAQ	       ............................ |fnctl-faq|
+Compatibility  ............................ |fnctl-compatibility|
+
+==============================================================================
+INTRODUCTION						*fnctl-introduction*
+
+*fnctl* is a configuration layer provided by FnCtl.io on top of `nixpkgs`.
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:noet:fen:
