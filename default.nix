@@ -4,7 +4,11 @@ self: super: with super;
 { fnctlPkgs = with super; {
 
   customized.vscode = {
-    jakelogemann = callPackage ./pkgs/customized/vscode/jakelogemann.nix {};
+    jakelogemann = callPackage ./customized/vscode/jakelogemann.nix {};
+  };
+
+  customized.neovim = {
+    jakelogemann = callPackage ./customized/neovim/jakelogemann {};
   };
 
 }; }

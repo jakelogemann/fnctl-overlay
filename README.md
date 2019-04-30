@@ -6,10 +6,32 @@ NixPkgs Overlay
 Collection of custom Nix/NixOS packages that may be useful. Each file/directory
 in `./pkgs/` corresponds to a package exported by this overlay.
 
+**Directly as NixOS module OR NixOS overlay**:
+
+_USE ONLY **ONE** of the TWO (2) options below._
+
+```nix
+{ config, pkgs, lib, options, ... }: {
+ # -----------------
+ # (1) Add this to add it as an overlay, this avoids adding it to `nix.nixPath`.
+ # nixpkgs.overlays = [ /path/to/overlay ];
+ # -----------------
+ # (2) Add this to add it as a module, this adds it to `nix.nixPath` as
+ # `<fnctlPkgs>` for easy CLI usage.
+ # imports = [ /path/to/overlay/nixos.nix ];
+ # -----------------
+
+ # Now, you have access to the packages contained here.
+ environment.systemPackages = with pkgs; [
+   fnctlPkgs.foo.somePackageName
+ ];
+}
+```
+
 **Can be used as NixPkgs Overlay**:
 ```nix
 with (import <nixpkgs> {
-  # config = []; 
+  # config = [];
   overlays = [
     /path/to/overlay
   ];
@@ -20,11 +42,9 @@ with (import <nixpkgs> {
 ```nix
 { config, pkgs, lib, options, ... }:
 {
-  nixpkgs.overlays = lib.mkBefore [
-    /path/to/overlay
-  ];
 }
 ```
+
 Contributing
 ------------
 
