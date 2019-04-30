@@ -1,5 +1,5 @@
 # NixOS Overlay containing the defined functions.
-self: super: with pkgs;
+self: super: with super;
 
 { fnctlPkgs = with super; {
 
