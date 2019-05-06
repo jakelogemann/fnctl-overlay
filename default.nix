@@ -5,6 +5,7 @@ self: super: with super;
 
   customized.vscode = {
     jakelogemann = callPackage ./customized/vscode/jakelogemann.nix {};
+    christine    = callPackage ./customized/vscode/christine.nix {};
   };
 
   customized.neovim = {
