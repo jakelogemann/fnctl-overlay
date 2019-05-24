@@ -9,13 +9,13 @@ buildEnv {
         ms-vscode.cpptools
         ms-python
       ] ++ vscode-utils.extensionsFromVscodeMarketplace [
-        { sha256 = "02e91379ff0770c2a15e7447703fb6cf235d64caf9f0809b2598e477430a90ac";  publisher = "dracula-theme";        name = "theme-dracula";             version = "2.17.0"; }
+        { sha256 = "02e91379ff0770c2a15e7447703fb6cf235d64caf9f0809b2598e477430a90ac";  publisher = "dracula-theme";        name = "theme-dracula";             version = "2.18.0"; }
           # { sha256 = "09dd3a62db1384b6e403eaa69a2e30e99e65b0d309176d296b18413df4fceb2a";  publisher = "vstirbu";              name = "vscode-mermaid-preview";    version = "0.11.2"; }
           { sha256 = "1f73c624fc08fee94c2e4c68289cbcd584d13b8930638bbadd2dfc8ffcd2b67b";  publisher = "ms-vscode";            name = "Go";                        version = "0.9.2"; }
           { sha256 = "2001bda605de12ba56990da03ebe9011a75b72f704f798886fe5b787f119fbed";  publisher = "keyring";              name = "Lua";                       version = "0.0.9"; }
           { sha256 = "214364c22ee52aa83e0970876f25da543bcd41446127e85bf22730bab421fef8";  publisher = "hackwaly";             name = "ocaml";                     version = "0.6.43"; }
           { sha256 = "0i2b896cnlk1d23w3jgy8wdqsww2lz201iym5c1rqbjzg1g3v3r4";              publisher = "christian-kohler";     name = "path-intellisense";         version = "1.4.2"; }
-          { sha256 = "0pcrvdd91cx9s00094a52azdphnqjb72sv9wvkhj4wxz1v8lm08q";              publisher = "Gruntfuggly";          name = "todo-tree";                 version = "0.0.130"; }
+          { sha256 = "0pcrvdd91cx9s00094a52azdphnqjb72sv9wvkhj4wxz1v8lm08q";              publisher = "Gruntfuggly";          name = "todo-tree";                 version = "0.0.132"; }
 
           { sha256 = "1y6y17zcfx56dqnki7yz4awl5b0xwajrlfg2jbwcpwpsi0njz46q";              publisher = "alefragnani";          name = "Bookmarks";                 version = "10.4.3"; }
           { sha256 = "1k8l5pyacpld9r76fqynpdx0zkzylvb5lickvxlnql2zb70cxk05";              publisher = "alefragnani";          name = "project-manager";           version = "10.5.1"; }
@@ -31,7 +31,7 @@ buildEnv {
           { sha256 = "9d5f2b8d919cdae98733295cd9c95cd63b81ccd33dcdb0902465249398c32a64";  publisher = "vscoss";               name = "vscode-ansible";            version = "0.5.2"; }
           { sha256 = "16g5yf9bwmq9kdixhcqpyxhp4pvavdbc0klv7kq1q7n7apql9s2g";              publisher = "CoenraadS";            name = "bracket-pair-colorizer";    version = "1.0.16"; }
           { sha256 = "a5e1b742053d63d59c6a9b38f51705a3083d72497ed4fc00eac849332faadab1";  publisher = "monokai";              name = "theme-monokai-pro-vscode";  version = "1.1.12"; }
-          { sha256 = "b20a163f36fcb06ce43a0e1252db2c42acef857c1e01309bcbfc114b561895d0";  publisher = "rust-lang";            name = "rust";                      version = "0.5.4"; }
+          { sha256 = "b20a163f36fcb06ce43a0e1252db2c42acef857c1e01309bcbfc114b561895d0";  publisher = "rust-lang";            name = "rust";                      version = "0.6.1"; }
           { sha256 = "b4d064cdd7c0d254fd2706d24958f3ec6a2727f35406fa38a9e7841cf16249ee";  publisher = "jolaleye";             name = "horizon-theme-vscode";      version = "1.8.0"; }
           { sha256 = "c1a57721025eb62d0a010fbe822f222828992fff8a37dff8d25da047fe17ab82";  publisher = "redhat";               name = "vscode-yaml";               version = "0.4.0"; }
           { sha256 = "08lhzhrn6p0xwi0hcyp6lj9bvpfj87vr99klzsiy8ji7621dzql3";              publisher = "bungcip";              name = "better-toml";               version = "0.3.2"; }
