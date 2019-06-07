@@ -29,18 +29,12 @@ buildEnv {
           { name = "theme-monokai-pro-vscode";  version = "1.1.12";  sha256 = "a5e1b742053d63d59c6a9b38f51705a3083d72497ed4fc00eac849332faadab1";  publisher = "monokai";              }
           { name = "todo-tree";                 version = "0.0.132"; sha256 = "0hn0an4a8hyqxksly8y62rjhx2h9src4zkkjmmima6mjxlgb344x";              publisher = "Gruntfuggly";          }
           { name = "vim";                       version = "1.2.0";   sha256 = "976d4d8f8b415db72c6275ae9c0e3cc7e7d71252098355bf947db0aff2d8f630";  publisher = "vscodevim";            }
-          { name = "vscode-ansible";            version = "0.5.2";   sha256 = "9d5f2b8d919cdae98733295cd9c95cd63b81ccd33dcdb0902465249398c32a64";  publisher = "vscoss";               }
+          # { name = "vscode-ansible";            version = "0.5.2";   sha256 = "9d5f2b8d919cdae98733295cd9c95cd63b81ccd33dcdb0902465249398c32a64";  publisher = "vscoss";               }
           { name = "vscode-power-mode";         version = "2.2.0";   sha256 = "0v1vqkcsnwwbb7xbpq7dqwg1qww5vqq7rc38qfk3p6b4xhaf8scm";              publisher = "hoovercj";             }
           { name = "vscode-yaml";               version = "0.4.0";   sha256 = "c1a57721025eb62d0a010fbe822f222828992fff8a37dff8d25da047fe17ab82";  publisher = "redhat";               }
-          # { sha256 = "ccc6ab26bb6e5b674a7d706d2682faad339db190e89bad3fb6c1c5e4fb1ebb14";  publisher = "idleberg";             name = "hopscotch";                 version = "0.2.2"; }
-          # { sha256 = "b6c0ff6e3e4d8ecbde1af14edb49db33de3fd8ee1d4790bb371bbc5ae4ef03ea";  publisher = "arcticicestudio";      name = "nord-visual-studio-code";   version = "2.0.3"; }
           # { sha256 = "bfadcb068e5cd517e3947ee1fca0b809fdb178bf0cd693f6546b252f274798ab";  publisher = "ms-kubernetes-tools";  name = "vscode-kubernetes-tools";   version = "0.1.18"; }
-          # { sha256 = "b282b6d7e6b8f4a2061438fc84702fa2ac28f7a852f7125b998395888df19d32";  publisher = "PeterJausovec";        name = "vscode-docker";             version = "0.6.1"; }
-          # { sha256 = "f7390197f1afd979deb8c73476282d0df6b3cfa736c18e0aa813d85562bd426a";  publisher = "fatihacet";            name = "gitlab-workflow";           version = "2.0.1"; }
         ];
 
       })
     ];
   }
-
-

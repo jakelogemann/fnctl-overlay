@@ -1,26 +1,46 @@
-{ stdenv, buildEnv, writeShellScriptBin, gnumake, pkgconfig, openssl, gnome3, rustup }:
+{ stdenv, buildEnv, writeShellScriptBin, writeText, rustPlatform, pkgconfig, openssl, gnome3, git}:
 let
-  gnvimPkg = stdenv.mkDerivation rec {
+  versionFix = writeText "gnvim-version-fix" ''
+use std::env;
+use std::fs::File;
+use std::io::Write;
+use std::path::Path;
+use std::process::Command;
+
+fn main() {
+    let out_dir = env::var("OUT_DIR").unwrap();
+    let dest_path = Path::new(&out_dir).join("gnvim_version.rs");
+    let mut f = File::create(&dest_path).unwrap();
+    f.write_all(
+        format!("const VERSION: &str = \"{}\";", "dev")
+            .into_bytes()
+            .as_slice(),
+    )
+    .unwrap();
+}
+'';
+
+  gnvimPkg = rustPlatform.buildRustPackage rec {
     name = "gnvim-pinned-${version}";
     version = "master";
+    cargoSha256 = "020dl38jv7pskks9dxj0y7mfjdx5sl77k2bhpccqdk63ihdscx92";
+    RUST_BACKTRACE = 1;
 
     src = builtins.fetchGit {
       url = "https://github.com/vhakulinen/gnvim.git";
       rev = "4b248cda4a6858544c6dbe9a4ad79796a7008247";
     };
 
-    buildInputs = [
-      gnumake
+    nativeBuildInputs = [
+      git
       pkgconfig
       openssl
       gnome3.glib
       gnome3.webkitgtk
-      rustup
     ];
 
-
-    buildPhase = ''
-      make
+    postUnpack = ''
+      cat ${versionFix} > ./source/build.rs
     '';
 
     installPhase = ''
@@ -50,7 +70,13 @@ in buildEnv {
     (writeShellScriptBin "gnvim" ''
       #!/usr/bin/env bash
       export GNVIM_RUNTIME_PATH="$(gnvim-nixStorePath)/share/gnvim/runtime"
-      exec "$(gnvim-nixStorePath)/bin/gnvim-unwrapped" $*
+      exec \
+        "$(gnvim-nixStorePath)/bin/gnvim-unwrapped" \
+        --disable-ext-cmdline \
+        --disable-ext-popupmenu \
+        --disable-ext-tabline \
+        --print-nvim-cmd -- \
+        $*
     '')
 
     (writeShellScriptBin "gnvim-nixStorePath" ''
