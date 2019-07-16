@@ -35,6 +35,48 @@ buildEnv {
     ripgrep
     universal-ctags
 
+    (writeShellScriptBin "rustx-install--cargo-tools" ''
+      #!/usr/bin/env bash
+      install_crate(){ cargo +nightly install --force $* ;}
+      set -xeuo pipefail
+
+      install_crate cargo-audit
+      install_crate cargo-edit
+      install_crate cargo-expand
+      install_crate cargo-make
+      install_crate cargo-release
+      install_crate cargo-vendor
+      install_crate cargo-watch
+
+      exit 0
+    '')
+
+    (writeShellScriptBin "rustx-install--common-tools" ''
+      #!/usr/bin/env bash
+      install_crate(){ cargo +nightly install --force $* ;}
+      set -xeuo pipefail
+
+      install_crate lsd
+      install_crate mdbook
+      install_crate systemfd
+      install_crate microserver
+
+      exit 0
+    '')
+
+    (writeShellScriptBin "rustx-install--dev-tools" ''
+      #!/usr/bin/env bash
+      install_crate(){ cargo +nightly install --force $* ;}
+      set -xeuo pipefail
+
+      rustx-install--cargo-tools
+
+      install_crate rusty-tags
+      install_crate wasm-pack
+
+      exit 0
+    '')
+
     (writeShellScriptBin "rustx-upgrade-tools" ''
       #!/usr/bin/env bash
       set -xeuo pipefail
@@ -42,7 +84,7 @@ buildEnv {
         | grep -ve "^ " \
         | awk '{print $1}' \
         | xargs -n1 -I'{}' \
-          nix-shell ~/rust/shell.nix --run "cargo +nightly install --force '{}'"
+          cargo +nightly install --force '{}'
     '')
 
   ];

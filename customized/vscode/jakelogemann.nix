@@ -23,7 +23,9 @@ buildEnv {
           { name = "output-colorizer";          version = "0.1.2";   sha256 = "676da74bd756d70ecbf6d68edcf931cd003db4eaac3e340f635ed931a9bd3345";  publisher = "IBM";                  }
           { name = "path-intellisense";         version = "1.4.2";   sha256 = "0i2b896cnlk1d23w3jgy8wdqsww2lz201iym5c1rqbjzg1g3v3r4";              publisher = "christian-kohler";     }
           { name = "project-manager";           version = "10.5.1";  sha256 = "1k8l5pyacpld9r76fqynpdx0zkzylvb5lickvxlnql2zb70cxk05";              publisher = "alefragnani";          }
-          { name = "rust";                      version = "0.6.1";   sha256 = "0f66z6b374nvnrn7802dg0xz9f8wq6sjw3sb9ca533gn5jd7n297";              publisher = "rust-lang";            }
+          # { name = "rust";                      version = "0.6.1";   sha256 = "0f66z6b374nvnrn7802dg0xz9f8wq6sjw3sb9ca533gn5jd7n297";              publisher = "rust-lang";            }
+          { name = "vscode-theme-1984";         version = "0.0.30";  sha256 = "15avmd6jm1mxp7bxpd0rkk4r4wh7abqg653z10m0f9p6sda0r7h4";              publisher = "juanmnl";              }
+          { name = "vscode-rust";               version = "0.4.2";   sha256 = "03hjx2xcilikp8cfswr7jljm683c1w5gcngjadxlsvcmybsgzhh2";              publisher = "kalitaalexey";         }
           { name = "terraform";                 version = "1.3.9";   sha256 = "82784f4f8e23acf08b1dcaab14fff9fcd73635b83af4e203d97bc71c44ceca42";  publisher = "mauve";                }
           { name = "theme-dracula";             version = "2.18.0";  sha256 = "02e91379ff0770c2a15e7447703fb6cf235d64caf9f0809b2598e477430a90ac";  publisher = "dracula-theme";        }
           { name = "theme-monokai-pro-vscode";  version = "1.1.12";  sha256 = "a5e1b742053d63d59c6a9b38f51705a3083d72497ed4fc00eac849332faadab1";  publisher = "monokai";              }
