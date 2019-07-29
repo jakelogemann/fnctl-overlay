@@ -6,16 +6,14 @@
 , ... }:
 
 let
-  keybinds = (import ./keybinds { inherit lib pkgs; });
-  vimrc = (import ./vimrc { inherit lib pkgs; });
+  keybinds     = (import ./keybinds { inherit lib pkgs; });
+  vimrc        = (import ./vimrc { inherit lib pkgs; });
   customConfig = (pkgs.callPackage ./custom-config.nix { inherit lib pkgs; });
 
-  vimrcSnippet = ''
-    ${customConfig.vimrcSnippet customConfig}
-
-    " FIXME: DEPRECATED. Keybinds should be migrated ASAP:
-    ${keybinds}
-  '';
+  vimrcSnippet = lib.concatStringsSep "\n" [
+    "${customConfig.vimrcSnippet customConfig}"
+    "${keybinds}"
+  ];
 
   nixBinScript = fname: (pkgs.writeShellScriptBin "${fname}-nixStorePath" ''
     #! /run/current-system/sw/bin/bash
