@@ -16,7 +16,7 @@ buildEnv {
   name    = "rust-ext";
 
   meta = with stdenv.lib; {
-    description = "custom rust extensions";
+    description = "common rust environment plus extra custom extensions";
     homepage    = "https://gitlab.com/fnctl/nix/pkgs/overlay.git";
     license     = licenses.mit;
     maintainers = [ maintainers.jakelogemann ];

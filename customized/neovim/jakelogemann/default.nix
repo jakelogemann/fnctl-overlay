@@ -32,7 +32,7 @@ let
   });
 
 in buildEnv {
-  name = "customized-neovim-jakelogemann";
+  name = "neovim-jakelogemann";
   pathsToLink = ["/share" "/bin"];
   ignoreCollisions = true;
 
