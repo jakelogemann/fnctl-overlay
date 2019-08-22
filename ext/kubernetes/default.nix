@@ -30,15 +30,16 @@ in buildEnv {
   ignoreCollisions = true;
 
   paths = with pkgs; [
-    kubectl     # Kubernetes CLI
-    minikube    # A tool that makes it easy to run Kubernetes locally
-    skaffold    # Easy and Repeatable Kubernetes Development
+    kubectl           # Kubernetes CLI
+    minikube          # A tool that makes it easy to run Kubernetes locally
+    skaffold          # Easy and Repeatable Kubernetes Development
     kubectl
-    kubernetes-helm  # Kubernetes deployment tool.
+    kubernetes-helm   # Kubernetes deployment tool.
     google-cloud-sdk
-    buildah     # OCI `docker build` alternative (no root/daemon needed).
-    skopeo      # OCI registry manipulation tool.
-    runc        # Daemonless container runtime.
+    buildah           # OCI `docker build` alternative (no root/daemon needed).
+    skopeo            # OCI registry manipulation tool.
+    runc              # Daemonless container runtime.
+    kustomize         # Customization of kubernetes YAML configurations
   ] ++ customScripts;
 
 }
