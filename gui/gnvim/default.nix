@@ -21,14 +21,14 @@ fn main() {
 '';
 
   gnvimPkg = rustPlatform.buildRustPackage rec {
-    name = "gnvim-pinned-${version}";
-    version = "master";
-    cargoSha256 = "020dl38jv7pskks9dxj0y7mfjdx5sl77k2bhpccqdk63ihdscx92";
+    name = "gnvim-${version}";
+    version = "0.1.5";
+    cargoSha256 = "0zzlalvcylkkybcaa69zx0gpikl7k3r8yqs7h93kdz1x7xnzmw9h";
     RUST_BACKTRACE = 1;
 
     src = builtins.fetchGit {
       url = "https://github.com/vhakulinen/gnvim.git";
-      rev = "4b248cda4a6858544c6dbe9a4ad79796a7008247";
+      rev = "dea3dd29a51e72fc129624ba9bb308f04bb891d6";
     };
 
     nativeBuildInputs = [
