@@ -1,5 +1,6 @@
 { stdenv, buildEnv, writeShellScriptBin, writeText, rustPlatform, pkgconfig, openssl, gnome3, git}:
 let
+  version = "0.1.4";
   versionFix = writeText "gnvim-version-fix" ''
 use std::env;
 use std::fs::File;
@@ -12,7 +13,7 @@ fn main() {
     let dest_path = Path::new(&out_dir).join("gnvim_version.rs");
     let mut f = File::create(&dest_path).unwrap();
     f.write_all(
-        format!("const VERSION: &str = \"{}\";", "dev")
+        format!("const VERSION: &str = \"{}\";", "${version}")
             .into_bytes()
             .as_slice(),
     )
@@ -21,14 +22,14 @@ fn main() {
 '';
 
   gnvimPkg = rustPlatform.buildRustPackage rec {
+    inherit version;
     name = "gnvim-${version}";
-    version = "0.1.5";
-    cargoSha256 = "157rx5z0k4p5z4aim2vibhw36lmvbrbxhgxiq4l0zyxkfcqwn71f";
+    cargoSha256 = "020dl38jv7pskks9dxj0y7mfjdx5sl77k2bhpccqdk63ihdscx92";
     RUST_BACKTRACE = 1;
 
     src = builtins.fetchGit {
       url = "https://github.com/vhakulinen/gnvim.git";
-      rev = "dea3dd29a51e72fc129624ba9bb308f04bb891d6";
+      ref = version;
     };
 
     nativeBuildInputs = [
