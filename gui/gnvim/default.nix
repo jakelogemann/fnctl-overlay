@@ -24,7 +24,7 @@ fn main() {
   gnvimPkg = rustPlatform.buildRustPackage rec {
     inherit version;
     name = "gnvim-${version}";
-    cargoSha256 = "0y4yi4w3bdswnfw73n4yn68bx5kl3ikkp21yahgp3hnxx12abv6d";
+    cargoSha256 = "020dl38jv7pskks9dxj0y7mfjdx5sl77k2bhpccqdk63ihdscx92";
     RUST_BACKTRACE = 1;
 
     src = builtins.fetchGit {
