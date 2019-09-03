@@ -35,6 +35,8 @@ buildEnv {
     ripgrep
     universal-ctags
 
+    (import ./rust-shell.nix { inherit writeShellScriptBin; })
+
     (writeShellScriptBin "rustx-install--cargo-tools" ''
       #!/usr/bin/env bash
       install_crate(){ cargo +nightly install --force $* ;}
