@@ -7,21 +7,7 @@
   git,
 }:
 
-let
-  customScripts = [
-    (writeShellScriptBin "rustx-upgrade-tools" ''
-      #!/usr/bin/env bash
-      set -xeuo pipefail
-      cargo install --list \
-        | grep -ve "^ " \
-        | awk '{print $1}' \
-        | xargs -n1 -I'{}' \
-          cargo +nightly install --force '{}'
-    '')
-  ];
-
-
-in buildEnv {
+buildEnv {
   name    = "nix-ext";
 
   meta = with stdenv.lib; {
@@ -39,7 +25,6 @@ in buildEnv {
   paths = [
     nix-du    # A tool to determine which gc-roots take space in your nix store
 
-
-  ] ++ customScripts;
-
+    (import ./nixos-repl.nix { inherit writeShellScriptBin; })
+  ];
 }
